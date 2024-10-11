@@ -16,8 +16,7 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
 def ingest_docs():
-    #loader = ReadTheDocsLoader("langchain-docs/api.python.langchain.com/en/latest", encoding='utf-8')
-    loader = ReadTheDocsLoader("rubik-docs/kubekings.com/cubos-de-rubik-3x3", patterns="*.html", custom_html_tag=('html', {}), encoding='utf-8')
+    loader = ReadTheDocsLoader("langchain-docs/api.python.langchain.com/en/latest", encoding='utf-8')
     raw_documents = loader.load()
     print(f"loaded {len(raw_documents)} documents")
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=600, chunk_overlap=50)
@@ -25,7 +24,7 @@ def ingest_docs():
     print(f"split {len(documents)} documents")
     for doc in documents:
         new_url = doc.metadata["source"]
-        new_url = new_url.replace("rubik-docs", "https://")
+        new_url = new_url.replace("langchain-docs", "https://")
         new_url = new_url.replace("\\", "/")
         doc.metadata.update({"source": new_url})
 
