@@ -1,3 +1,5 @@
+## HAY DOS RAMAS, una para langchain y otra para el bot personalizado, pero las dos funcionan en main
+
 ### RUBIKS CUBE
 ![image](https://github.com/user-attachments/assets/0d2b189f-f89d-40fa-be0d-030c96c2606e)
 ![image](https://github.com/user-attachments/assets/8ed54365-4bca-422b-a55c-feb0f22a010b)
